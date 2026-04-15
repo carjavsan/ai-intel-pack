@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Prospect Intelligence Pack — Sarah Mitchell | RE/MAX Austin</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    :root {
+      --navy:   #0d1b2a;
+      --navy2:  #1a2f45;
+      --navy3:  #243b55;
+      --accent: #2563eb;
+      --accent2:#3b82f6;
+      --gold:   #f59e0b;
+      --green:  #10b981;
+      --white:  #ffffff;
+      --gray50: #f8fafc;
+      --gray100:#f1f5f9;
+      --gray200:#e2e8f0;
+      --gray400:#94a3b8;
+      --gray600:#475569;
+      --gray800:#1e293b;
+      --red:    #ef4444;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--gray50);
+      color: var(--gray800);
+      line-height: 1.6;
+    }
+
+    /* ── COVER PAGE ──────────────────────────────────────────── */
+    .cover {
+      background: linear-gradient(145deg, var(--navy) 0%, var(--navy2) 50%, var(--navy3) 100%);
+      color: var(--white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 60px 80px;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+    }
+
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(37,99,235,0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cover::after {
+      content: '';
+      position: absolute;
+      bottom: -150px; left: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(245,158,11,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cover-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo .icon {
+      width: 40px; height: 40px;
+      background: var(--accent);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: -1px;
+    }
+
+    .brand-logo .name { font-size: 18px; font-weight: 700; letter-spacing: 0.5px; }
+    .brand-logo .sub  { font-size: 11px; color: var(--gray400); font-weight: 400; letter-spacing: 1.5px; text-transform: uppercase; }
+
+    .cover-badge {
+      background: rgba(245,158,11,0.15);
+      border: 1px solid rgba(245,158,11,0.4);
+      color: var(--gold);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .cover-hero {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+
+    .cover-eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cover-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 30px; height: 2px;
+      background: var(--accent2);
+    }
+
+    .cover-title {
+      font-size: 56px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      letter-spacing: -1.5px;
+    }
+
+    .cover-title .highlight { color: var(--gold); }
+
+    .cover-subtitle {
+      font-size: 20px;
+      color: rgba(255,255,255,0.7);
+      font-weight: 400;
+      margin-bottom: 40px;
+      max-width: 560px;
+    }
+
+    .cover-meta {
+      display: flex;
+      gap: 48px;
+    }
+
+    .meta-item .label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--gray400);
+      margin-bottom: 4px;
+    }
+
+    .meta-item .value {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .meta-item .value.name { color: var(--gold); }
+
+    .cover-stats {
+      display: flex;
+      gap: 32px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat-box {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 20px 28px;
+      text-align: center;
+    }
+
+    .stat-box .num { font-size: 36px; font-weight: 800; color: var(--white); }
+    .stat-box .unit { font-size: 16px; font-weight: 600; color: var(--accent2); }
+    .stat-box .lbl { font-size: 12px; color: var(--gray400); margin-top: 4px; letter-spacing: 0.5px; }
+
+    .cover-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      position: relative;
+      z-index: 1;
+    }
+
+    .confidential {
+      font-size: 11px;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .generated-date { font-size: 12px; color: var(--gray400); }
+
+    /* ── WATERMARK ───────────────────────────────────────────── */
+    .watermark {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--navy);
+      color: var(--white);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      opacity: 0.85;
+      z-index: 999;
+      pointer-events: none;
+    }
+
+    .watermark .dot {
+      width: 6px; height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    /* ── PAGE WRAPPER ────────────────────────────────────────── */
+    .page { max-width: 1100px; margin: 0 auto; padding: 60px 40px; }
+
+    /* ── EXECUTIVE SUMMARY ───────────────────────────────────── */
+    .exec-summary {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 48px 56px;
+      margin-bottom: 48px;
+      border: 1px solid var(--gray200);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .exec-summary::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--accent), var(--gold));
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    .summary-text {
+      font-size: 16px;
+      color: var(--gray600);
+      line-height: 1.8;
+      max-width: 780px;
+    }
+
+    .summary-text strong { color: var(--navy); }
+
+    .summary-kpis {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .kpi-card {
+      background: var(--gray50);
+      border: 1px solid var(--gray200);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .kpi-card .kpi-num {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    .kpi-card .kpi-num.green { color: var(--green); }
+    .kpi-card .kpi-num.blue  { color: var(--accent); }
+    .kpi-card .kpi-num.gold  { color: var(--gold); }
+
+    .kpi-card .kpi-label {
+      font-size: 12px;
+      color: var(--gray400);
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    /* ── SECTION HEADER ──────────────────────────────────────── */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .section-header .sh-icon {
+      width: 44px; height: 44px;
+      background: var(--navy);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .section-header h2 {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.5px;
+    }
+
+    .section-header p {
+      font-size: 14px;
+      color: var(--gray400);
+      margin-top: 2px;
+    }
+
+    /* ── PROSPECT CARD ───────────────────────────────────────── */
+    .prospect-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      margin-bottom: 64px;
+    }
+
+    .prospect-card {
+      background: var(--white);
+      border: 1px solid var(--gray200);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      transition: box-shadow 0.2s;
+    }
+
+    .prospect-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 28px 32px 24px;
+      border-bottom: 1px solid var(--gray100);
+    }
+
+    .prospect-avatar {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+
+    .av-blue   { background: linear-gradient(135deg, #2563eb, #3b82f6); }
+    .av-teal   { background: linear-gradient(135deg, #0d9488, #14b8a6); }
+    .av-purple { background: linear-gradient(135deg, #7c3aed, #a855f7); }
+    .av-orange { background: linear-gradient(135deg, #ea580c, #f97316); }
+    .av-green  { background: linear-gradient(135deg, #059669, #10b981); }
+    .av-rose   { background: linear-gradient(135deg, #be185d, #ec4899); }
+    .av-indigo { background: linear-gradient(135deg, #4338ca, #6366f1); }
+    .av-amber  { background: linear-gradient(135deg, #b45309, #f59e0b); }
+    .av-slate  { background: linear-gradient(135deg, #334155, #475569); }
+    .av-cyan   { background: linear-gradient(135deg, #0e7490, #06b6d4); }
+
+    .card-identity { flex: 1; }
+
+    .prospect-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray400);
+      margin-bottom: 4px;
+    }
+
+    .prospect-name {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.3px;
+    }
+
+    .prospect-type-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    .badge-blue   { background: #dbeafe; color: #1d4ed8; }
+    .badge-teal   { background: #ccfbf1; color: #0f766e; }
+    .badge-purple { background: #ede9fe; color: #6d28d9; }
+    .badge-orange { background: #ffedd5; color: #c2410c; }
+    .badge-green  { background: #dcfce7; color: #15803d; }
+    .badge-rose   { background: #fce7f3; color: #9d174d; }
+    .badge-indigo { background: #e0e7ff; color: #3730a3; }
+    .badge-amber  { background: #fef3c7; color: #92400e; }
+    .badge-slate  { background: #f1f5f9; color: #334155; }
+    .badge-cyan   { background: #cffafe; color: #0e7490; }
+
+    .card-header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .confidence-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 12px 18px;
+    }
+
+    .confidence-badge .conf-num {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--green);
+      line-height: 1;
+    }
+
+    .confidence-badge .conf-label {
+      font-size: 10px;
+      color: var(--gray400);
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      margin-top: 2px;
+    }
+
+    .conf-bar {
+      width: 80px;
+      height: 6px;
+      background: var(--gray100);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .conf-bar .fill {
+      height: 100%;
+      border-radius: 3px;
+      background: linear-gradient(90deg, var(--green), #34d399);
+    }
+
+    .card-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+    }
+
+    .card-section {
+      padding: 24px 32px;
+      border-right: 1px solid var(--gray100);
+    }
+
+    .card-section:last-child { border-right: none; }
+
+    .cs-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gray400);
+      margin-bottom: 8px;
+    }
+
+    .cs-value {
+      font-size: 14px;
+      color: var(--gray800);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .cs-value .highlight { color: var(--accent); font-weight: 600; }
+    .cs-value .budget    { font-size: 18px; font-weight: 700; color: var(--navy); }
+
+    .card-outreach {
+      padding: 20px 32px;
+      background: linear-gradient(135deg, #f0f7ff 0%, #f8fafc 100%);
+      border-top: 1px solid var(--gray100);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .outreach-icon {
+      width: 32px; height: 32px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .outreach-content .outreach-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .outreach-content .outreach-text {
+      font-size: 14px;
+      color: var(--gray700, #374151);
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    .outreach-content .outreach-text strong {
+      font-style: normal;
+      color: var(--navy);
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+
+    .contact-chip {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      color: var(--gray600);
+      background: var(--gray100);
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    /* ── FOOTER ──────────────────────────────────────────────── */
+    .pack-footer {
+      background: var(--navy);
+      color: var(--white);
+      padding: 40px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-brand .fb-name  { font-size: 18px; font-weight: 700; }
+    .footer-brand .fb-tagline{ font-size: 12px; color: var(--gray400); margin-top: 4px; }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--gray400);
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    .footer-powered {
+      font-size: 12px;
+      color: var(--gray400);
+      text-align: right;
+    }
+
+    .footer-powered .powered-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 11px;
+      margin-bottom: 6px;
+    }
+
+    .footer-powered .powered-badge .dot {
+      width: 6px; height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+    }
+
+    /* ── METHODOLOGY NOTE ────────────────────────────────────── */
+    .methodology {
+      background: var(--white);
+      border: 1px solid var(--gray200);
+      border-radius: 16px;
+      padding: 36px 48px;
+      margin-bottom: 48px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+
+    .methodology h3 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 16px; }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    .method-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .method-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: var(--gray100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .method-text .mt-title { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 2px; }
+    .method-text .mt-desc  { font-size: 12px; color: var(--gray400); line-height: 1.5; }
+
+    /* ── PRINT / RESPONSIVE ──────────────────────────────────── */
+    @media (max-width: 900px) {
+      .cover { padding: 40px 32px; }
+      .cover-title { font-size: 38px; }
+      .cover-stats { flex-wrap: wrap; }
+      .card-body { grid-template-columns: 1fr; }
+      .card-section { border-right: none; border-bottom: 1px solid var(--gray100); }
+      .summary-kpis { grid-template-columns: repeat(2,1fr); }
+      .method-grid  { grid-template-columns: 1fr; }
+      .page { padding: 32px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════════
+     COVER PAGE
+════════════════════════════════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-header">
+    <div class="brand-logo">
+      <div class="icon">AG</div>
+      <div>
+        <div class="name">AGNC AI</div>
+        <div class="sub">Prospect Intelligence</div>
+      </div>
+    </div>
+    <div class="cover-badge">★ Premium Intelligence Pack</div>
+  </div>
+
+  <div class="cover-hero">
+    <div class="cover-eyebrow">AI Prospect Intelligence Pack</div>
+    <h1 class="cover-title">
+      Your Next 10<br>
+      <span class="highlight">Closed Deals</span><br>
+      Are Already Out There.
+    </h1>
+    <p class="cover-subtitle">
+      AI-curated prospects with verified contact info, personalized outreach angles, and predicted close probability — so you spend time closing, not searching.
+    </p>
+    <div class="cover-meta">
+      <div class="meta-item">
+        <div class="label">Prepared For</div>
+        <div class="value name">Sarah Mitchell</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Brokerage</div>
+        <div class="value">RE/MAX — Austin, TX</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Market Focus</div>
+        <div class="value">Greater Austin MSA</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Generated</div>
+        <div class="value">June 2026</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cover-stats">
+    <div class="stat-box">
+      <span class="num">10</span>
+      <div class="lbl">Curated Prospects</div>
+    </div>
+    <div class="stat-box">
+      <span class="num">87<span class="unit">%</span></span>
+      <div class="lbl">Avg Confidence Score</div>
+    </div>
+    <div class="stat-box">
+      <span class="num">$5.8<span class="unit">M</span></span>
+      <div class="lbl">Total Addressable Pipeline</div>
+    </div>
+    <div class="stat-box">
+      <span class="num">48<span class="unit">h</span></span>
+      <div class="lbl">Delivery Turnaround</div>
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <div class="confidential">Confidential — Prepared exclusively for Sarah Mitchell</div>
+    <div class="generated-date">© 2026 AGNC AI · agnc.ai</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     MAIN CONTENT
+════════════════════════════════════════════════════════════ -->
+<div class="page">
+
+  <!-- EXECUTIVE SUMMARY -->
+  <div class="exec-summary">
+    <div class="section-label">Executive Summary</div>
+    <h2 class="section-title">What's In This Pack</h2>
+    <p class="summary-text">
+      This Intelligence Pack contains <strong>10 high-intent, AI-verified prospects</strong> actively looking to buy in the Greater Austin market — curated specifically for your brokerage footprint, price specialization, and negotiation style. Each prospect was scored using <strong>47 behavioral, demographic, and market-timing signals</strong>, including online search activity, life-event indicators, and neighborhood engagement patterns, delivering an average close-probability score of 87%. <strong>Acting on this pack within 14 days is critical</strong> — the window-of-intent data shows these buyers are 3× more likely to engage their first agent contact versus waiting 30+ days.
+    </p>
+
+    <div class="summary-kpis">
+      <div class="kpi-card">
+        <div class="kpi-num blue">10</div>
+        <div class="kpi-label">Verified Prospects</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num green">87%</div>
+        <div class="kpi-label">Avg Close Confidence</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num gold">$5.8M</div>
+        <div class="kpi-label">Total Pipeline Value</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">47</div>
+        <div class="kpi-label">AI Signals Analyzed</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- METHODOLOGY -->
+  <div class="methodology">
+    <div class="section-label">How We Built This</div>
+    <h3>AI Methodology — 3 Intelligence Layers</h3>
+    <div class="method-grid">
+      <div class="method-item">
+        <div class="method-icon">🔍</div>
+        <div class="method-text">
+          <div class="mt-title">Behavioral Signal Mining</div>
+          <div class="mt-desc">Tracks mortgage pre-approval activity, Zillow/Redfin search patterns, and open-house attendance signals across Austin ZIP codes.</div>
+        </div>
+      </div>
+      <div class="method-item">
+        <div class="method-icon">📊</div>
+        <div class="method-text">
+          <div class="mt-title">Life-Event Scoring</div>
+          <div class="mt-desc">Cross-references relocation announcements, LinkedIn job changes, life events (marriage, divorce, new child) that correlate with purchase intent.</div>
+        </div>
+      </div>
+      <div class="method-item">
+        <div class="method-icon">🤖</div>
+        <div class="method-text">
+          <div class="mt-title">Personalized Angle AI</div>
+          <div class="mt-desc">Generates a bespoke outreach angle for each prospect based on their specific pain point, timeline, and emotional driver — tailored to Sarah's brand voice.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROSPECTS HEADER -->
+  <div class="section-header">
+    <div class="sh-icon">👤</div>
+    <div>
+      <h2>Your 10 High-Intent Prospects</h2>
+      <p>Ranked by AI confidence score · Greater Austin MSA · June 2026</p>
+    </div>
+  </div>
+
+  <!-- PROSPECT CARDS -->
+  <div class="prospect-grid">
+
+    <!-- ─── PROSPECT 1 ─── -->
+    <div class="prospect-card">
+      <div class="card-header">
+        <div class="prospect-avatar av-blue">DW</div>
+        <div class="card-identity">
+          <div class="prospect-num">Prospect #01</div>
+          <div class="prospect-name">Derek Wainwright</div>
+          <span class="prospect-type-badge badge-blue">🏢 Relocating Tech Executive</span>
+          <div class="contact-row">
+            <div class="contact-chip">📧 d.wainwright@gmail.com</div>
+            <div class="contact-chip">📞 (512) 847-3291</div>
+            <div class="contact-chip">💼 LinkedIn: /in/derekwainwright</div>
+          </div>
+        </div>
+        <div class="card-header-right">
+          <div class="confidence-badge">
+            <div class="conf-num">94%</div>
+            <div class="conf-label">AI Confidence</div>
+          </div>
+          <div class="conf-bar"><div class="fill" style="width:94%"></div></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-section">
+          <div class="cs-label">Location & Target</div>
+          <div class="cs-value">Relocating from <span class="highlight">San Francisco, CA</span><br>Targeting <strong>Westlake Hills / Bee Cave</strong></div>
+        </div>
+        <div class="card-section">
+          <div class="cs-label">Budget</div>
+          <div class="cs-value"><span class="budget">$900K–$1.1M</span><br>Pre-approved · Cash offer possible</div>
+        </div>
+        <div class="card-section">
+          <div class="cs-label">Pain Point</div>
+          <div class="cs-value">Starts at Apple Austin campus August 1st. Needs to close in <strong>45 days</strong>. Wife has 2 school-age kids — top-rated school district non-negotiable.</div>
+        </div>
+      </div>
+      <div class="card-outreach">
+        <div class="outreach-icon">💬</div>
+        <div class="outreach-content">
+          <div class="outreach-label">Sarah's Personalized Outreach Angle</div>
+          <div class="outreach-text">"Hi Derek — I specialize in helping Apple and Tesla relocations find homes in Westlake ISD within a tight timeline. I've got 3 off-market listings in Bee Cave that aren't on Zillow yet and could close in under 40 days. <strong>Can we jump on a 15-min call this week?</strong>"</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── PROSPECT 2 ─── -->
+    <div class="prospect-card">
+      <div class="card-header">
+        <div class="prospect-avatar av-teal">MR</div>
+        <div class="card-identity">
+          <div class="prospect-num">Prospect #02</div>
+          <div class="prospect-name">Maria & Carlos Reyes</div>
+          <span class="prospect-type-badge badge-teal">🏠 First-Time Buyers</span>
+          <div class="contact-row">
+            <div class="contact-chip">📧 mariareyes.atx@gmail.com</div>
+            <div class="contact-chip">📞 (512) 664-8832</div>
+          </div>
+        </div>
+        <div class="card-header-right">
+          <div class="confidence-badge">
+            <div class="conf-num">91%</div>
+            <div class="conf-label">AI Confidence</div>
+          </div>
+          <div class="conf-bar"><div class="fill" style="width:91%"></div></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-section">
+          <div class="cs-label">Location & Target</div>
+          <div class="cs-value">Currently renting in <span class="highlight">East Austin 78702</span><br>Targeting <strong>Manor / Pflugerville</strong></div>
+        </div>
+        <div class="card-section">
+          <div class="cs-label">Budget</div>
+          <div class="cs-value"><span class="budget">$320K–$385K</span><br>FHA pre-approved · 3.5% down</div>
+        </div>
+        <div class="card-section">
+          <div class="cs-label">Pain Point</div>
+          <div class="cs-value">Lease ends September 30th. Have lost 4 offers in 2025 — frustrated with bidding wars. Want an agent who will fight for them.</div>
+        </div>
+      </div>
+      <div class="card-outreach">
+        <div class="outreach-icon">💬</div>
+        <div class="outreach-content">
+          <div class="outreach-label">Sarah's Personalized Outreach Angle</div>
+          <div class="outreach-text">"Maria — I know how demoralizing losing 4 offers feels. I've helped 11 first-time buyers win in Pflugerville this year using a specific offer strategy that beats cash buyers. <strong>I'd love to show you what's worked — free 30-min strategy call?</strong>"</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── PROSPECT 3 ─── -->
+    <div class="prospect-card">
+      <div class="card-header">
+        <div class="prospect-avatar av-purple">JT</div>
+        <div class="card-identity">
+          <div class="prospect-num">Prospect #03</div>
+          <div class="prospect-name">James Thornton</div>
+          <span class="prospect-type-badge badge-purple">📈 Real Estate Investor</span>
+          <div class="contact-row">
+            <div class="contact-chip">📧 jthornton.invest@outlook.com</div>
+            <div class="contact-chip">📞 (737) 291-5543</div>
+          </div>
+        </div>
+        <div class="card-header-right">
+          <div class="confidence-badge">
+            <div class="conf-num">89%</div>
+            <div class="conf-label">AI Confidence</div>
+          </div>
+          <div class="conf-bar"><div class="fill" style="width:89%"></div></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-section">
+          <div class="cs-label">Location & Target</div>
+          <div class="cs-value">Dallas-based investor<br>Targeting <strong>East Austin / Mueller</strong></div>
+        </div>
+        <div class="card-section">
+          <div class="cs-label">Budget</div>
+          <div class="cs-value"><span class="budget">$450K–$650K</span><br>All-cash · Owns 3 DFW properties</div>
+        </div>
+        <div class="card-section">
+          <div class="cs-label">Pain Point</div>
+          <div class="cs-value">Wants short-term rental (STR) investment near UT / downtown. Concerned about Austin STR ordinances — needs agent with STR compliance expertise.</div>
+        </div>
+      </div>
+      <div class="card-outreach">
+        <div class="outreach-icon">💬</div>
+        <div class="outreach-content">
+          <div class="outreach-label">Sarah's Personalized Outreach Angle</div>
+          <div class="outreach-text">"James — I'm one of the few RE/MAX agents certified in Austin's STR licensing process. I have 2 Mueller properties currently generating $4,200/month that just hit the market. <strong>These move fast — want the details before they're listed publicly?</strong>"</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── PROSPECT 4 ─── -->
+    <div class="prospect-card">
+      <div class="card-header">
+        <div class="prospect-avatar av-orange">PK</div>
+        <div class="card-identity">
+          <div class="prospect-num">Prospect #04</div>
+          <div class="prospect-name">Priya Krishnamurthy</div>
+          <span class="prospect-type-badge badge-orange">💻 Remote Work Relocator</span>
+          <div class="contact-row">
+            <div class="contact-chip">📧 priya.k.austin@gmail.com</div>
+            <div class="contact-chip">📞 (415) 338-9027</div>
+            <div class="contact-chip">📍 SF → Austin</div>
+          </div>
+        </div>
+        <div class="card-header-right">
+          <div class="confidence-badge">
+            <div class="conf-num">92%</div>
+            <div class="conf-label">AI Confidence</div>
+          </div>
+          <div class="conf-bar"><div class="fill" style="width:92%"></div></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-section">
+          <div class="cs-label">Location & Target</div>
+          <div class="cs-value">Arriving from <span class="highlight">San Francisco, CA</span><br>Targeting <strong>South Congress / Bouldin</strong></div>
+        </div>
+        <div class="card-section">
+          <div class="cs-label">Budget</div>
+          <div class="cs-value"><span class="budget">$550K–$720K</span><br>20% down · Strong W-2 (Meta eng.)</div>
+        </div>
+        <div class="card-section">
+          <div class="cs-label">Pain Point</div>
+          <div class="cs-value">Wants walkability + community feel similar to SF's Mission District. Nervous about Austin sprawl. Hasn't visited in-person yet — needs virtual tours.</div>
+        </div>
+      </div>
+      <div class="card-outreach">
+        <div class="outreach-icon">💬</div>
+        <div class="outreach-content">
+          <div class="outreach-label">Sarah's Personalized Outreach Angle</div>
+          <div class="outreach-text">"Priya — South Congress is Austin's answer to SF's Mission — walkable, vibrant, and no car needed for your weekend. I do full virtual-tour video calls with SF transplants every week. <strong>Let me send you a quick 10-min neighborhood video this afternoon?</strong>"</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── PROSPECT 5 ─── -->
+    <div class="prospect-card">
+      <div class="card-header">
+        <div class="prospect-avatar av-green">BH</div>
+        <div class="card-identity">
+          <div class="prospect-num">Prospect #05</div>
+          <div class="prospect-name">Brad & Heather Holloway</div>
+          <span class="prospect-type-badge badge-green">🏡 Move-Up Buyers</span>
+          <div class="contact-row">
+            <div class="contact-chip">📧 bholloway.family@gmail.com</div>
+            <div class="contact-chip">📞 (512) 479-3866</div>
+          </div>
+        </div>
+        <div class="card-header-right">
+          <div class="confidence-badge">
+            <div class="conf-num">88%</div>
+            <div class="conf-label">AI Confidence</div>
+          </div>
+          <div class="conf-bar"><div class="fill" style="width:88%"></div></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-section">
+          <div class="cs-label">Location & Target</div>
+          <div class="cs-value">Current home: <span class="highlight">Rundberg, Austin</span><br>Targeting <strong>Cedar Park / Liberty Hill</strong></div>
+        </div>
+        <div class="card-section">
+          <div class="cs-label">Budget</div>
+          <div class="cs-value"><span class="budget">$475K–$560K</span><br>~$180K equity to deploy · Pre-qual'd</div>
+        </div>
+        <div class="card-section">
+          <div class="cs-label">Pain Point</div>
+          <div class="cs-value">Baby #3 due in November. Current 3/2 is too small. Worried about selling and buying simultaneously — timing anxiety is holding them back.</div>
+        </div>
+      </div>
+      <div class="card-outreach">
+        <div class="outreach-icon">💬</div>
+        <div class="outreach-content">
+          <div class="outreach-label">Sarah's Personalized Outreach Angle</div>
+          <div class="outreach-text">"Brad — congrats on the new addition coming in November! I've helped 8 families this year do a seamless sell-then-buy with zero gap housing using our bridge program. <strong>I can walk you through the whole timeline in 20 minutes — no pressure, just a plan.</strong>"</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── PROSPECT 6 ─── -->
+    <div class="prospect-card">
+      <div class="card-header">
+        <div class="prospect-avatar av-rose">AL</div>
+        <div class="card-identity">
+          <div class="prospect-num">Prospect #06</div>
+          <div class="prospect-name">Amanda Larson</div>
+          <span class="prospect-type-badge badge-rose">💔 Life-Transition Buyer</span>
+          <div class="contact-row">
+            <div class="contact-chip">📧 amanda.l.atx@gmail.com</div>
+            <div class="contact-chip">📞 (512) 601-2247</div>
+          </div>
+        </div>
+        <div class="card-header-right">
+          <div class="confidence-badge">
+            <div class="conf-num">85%</div>
+            <div class="conf-label">AI Confidence</div>
+          </div>
+          <div class="conf-bar"><div class="fill" style="width:85%"></div></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-section">
+          <div class="cs-label">Location & Target</div>
+          <div class="cs-value">Currently in marital home:<br><span class="highlight">Tarrytown, Austin</span> — targeting <strong>Hyde Park / North Loop</strong></div>
+        </div>
+        <div class="card-section">
+          <div class="cs-label">Budget</div>
+          <div class="cs-value"><span class="budget">$410K–$490K</span><br>Divorce settlement funds · Needs solo pre-qual guidance</div>
+        </div>
+        <div class="card-section">
+          <div class="cs-label">Pain Point</div>
+          <div class="cs-value">Recently divorced. First time buying solo — feels overwhelmed. Needs an agent who can also coordinate with her divorce attorney on timing of the settlement funds.</div>
+        </div>
+      </div>
+      <div class="card-outreach">
+        <div class="outreach-icon">💬</div>
+        <div class="outreach-content">
+          <div class="outreach-label">Sarah's Personalized Outreach Angle</div>
+          <div class="outreach-text">"Amanda — starting a new chapter deserves a fresh, beautiful space that's all yours. I've helped 6 clients through similar transitions and I know how to coordinate with attorneys to protect your settlement timing. <strong>No pressure — I just want to be a resource whenever you're ready.</strong>"</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── PROSPECT 7 ─── -->
+    <div class="prospect-card">
+      <div class="card-header">
+        <div class="prospect-avatar av-indigo">TC</div>
+        <div class="card-identity">
+          <div class="prospect-num">Prospect #07</div>
+          <div class="prospect-name">Tyler & Chloe Chen</div>
+          <span class="prospect-type-badge badge-indigo">💑 DINK Move-Up</span>
+          <div class="contact-row">
+            <div class="contact-chip">📧 tyler.chloe.chen@gmail.com</div>
+            <div class="contact-chip">📞 (737) 844-5510</div>
+          </div>
+        </div>
+        <div class="card-header-right">
+          <div class="confidence-badge">
+            <div class="conf-num">90%</div>
+            <div class="conf-label">AI Confidence</div>
+          </div>
+          <div class="conf-bar"><div class="fill" style="width:90%"></div></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-section">
+          <div class="cs-label">Location & Target</div>
+          <div class="cs-value">Condo in <span class="highlight">Domain area 78758</span><br>Targeting <strong>Barton Hills / Zilker Park</strong></div>
+        </div>
+        <div class="card-section">
+          <div class="cs-label">Budget</div>
+          <div class="cs-value"><span class="budget">$700K–$850K</span><br>Combined HHI $340K · Both in tech</div>
+        </div>
+        <div class="card-section">
+          <div class="cs-label">Pain Point</div>
+          <div class="cs-value">Outgrown their condo but intimidated by Zilker pricing. Want a pool and home office. Have looked at 20+ homes online but haven't toured any in person.</div>
+        </div>
+      </div>
+      <div class="card-outreach">
+        <div class="outreach-icon">💬</div>
+        <div class="outreach-content">
+          <div class="outreach-label">Sarah's Personalized Outreach Angle</div>
+          <div class="outreach-text">"Tyler — I know Zilker feels out of reach, but the market has shifted 12% in buyers' favor since last year. I have 2 homes with pools and dedicated offices in your range that aren't listed yet. <strong>Want to be the first to tour them this Saturday?</strong>"</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── PROSPECT 8 ─── -->
+    <div class="prospect-card">
+      <div class="card-header">
+        <div class="prospect-avatar av-amber">RN</div>
+        <div class="card-identity">
+          <div class="prospect-num">Prospect #08</div>
+          <div class="prospect-name">Robert Nguyen</div>
+          <span class="prospect-type-badge badge-amber">🏚️ Out-of-State Investor</span>
+          <div class="contact-row">
+            <div class="contact-chip">📧 rob.nguyen.invest@gmail.com</div>
+            <div class="contact-chip">📞 (713) 520-8847</div>
+            <div class="contact-chip">📍 Houston, TX</div>
+          </div>
+        </div>
+        <div class="card-header-right">
+          <div class="confidence-badge">
+            <div class="conf-num">82%</div>
+            <div class="conf-label">AI Confidence</div>
+          </div>
+          <div class="conf-bar"><div class="fill" style="width:82%"></div></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-section">
+          <div class="cs-label">Location & Target</div>
+          <div class="cs-value">Houston-based, <span class="highlight">no Austin ties yet</span><br>Targeting <strong>Del Valle / SE Austin</strong></div>
+        </div>
+        <div class="card-section">
+          <div class="cs-label">Budget</div>
+          <div class="cs-value"><span class="budget">$280K–$360K</span><br>DSCR loan pre-approved · LTR strategy</div>
+        </div>
+        <div class="card-section">
+          <div class="cs-label">Pain Point</div>
+          <div class="cs-value">Wants long-term rental property near Tesla Gigafactory or Samsung plant workers. Doesn't know Austin geography — needs an agent he can fully trust remotely.</div>
+        </div>
+      </div>
+      <div class="card-outreach">
+        <div class="outreach-icon">💬</div>
+        <div class="outreach-content">
+          <div class="outreach-label">Sarah's Personalized Outreach Angle</div>
+          <div class="outreach-text">"Robert — Del Valle is one of Austin's best-kept investment secrets right now. Tesla and Samsung both have plants within 5 miles and tenant demand is through the roof. I handle the whole process remotely — docs, tours, and tenant-ready handoff. <strong>Let me send you an ROI comparison on 3 properties this week.</strong>"</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── PROSPECT 9 ─── -->
+    <div class="prospect-card">
+      <div class="card-header">
+        <div class="prospect-avatar av-slate">GP</div>
+        <div class="card-identity">
+          <div class="prospect-num">Prospect #09</div>
+          <div class="prospect-name">Gloria & Frank Pescatori</div>
+          <span class="prospect-type-badge badge-slate">🌿 Empty-Nester Downsizers</span>
+          <div class="contact-row">
+            <div class="contact-chip">📧 g.pescatori@yahoo.com</div>
+            <div class="contact-chip">📞 (512) 338-6741</div>
+          </div>
+        </div>
+        <div class="card-header-right">
+          <div class="confidence-badge">
+            <div class="conf-num">83%</div>
+            <div class="conf-label">AI Confidence</div>
+          </div>
+          <div class="conf-bar"><div class="fill" style="width:83%"></div></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-section">
+          <div class="cs-label">Location & Target</div>
+          <div class="cs-value">Selling 4/3 in <span class="highlight">Cedar Park</span><br>Targeting <strong>Lakeway / Lake Travis</strong></div>
+        </div>
+        <div class="card-section">
+          <div class="cs-label">Budget</div>
+          <div class="cs-value"><span class="budget">$580K–$700K</span><br>Home paid off · Large down payment ready</div>
+        </div>
+        <div class="card-section">
+          <div class="cs-label">Pain Point</div>
+          <div class="cs-value">Last kid left for UT this fall. Want a lock-and-leave 2BR with lake views. Unsure if to renovate-and-sell or sell-as-is — need an agent who can advise both sides.</div>
+        </div>
+      </div>
+      <div class="card-outreach">
+        <div class="outreach-icon">💬</div>
+        <div class="outreach-content">
+          <div class="outreach-label">Sarah's Personalized Outreach Angle</div>
+          <div class="outreach-text">"Gloria — congratulations on this new chapter! I can run a free sell-as-is vs. light-reno analysis on your Cedar Park home — most sellers net $18K more with just 3 strategic updates. Then I'd love to show you two stunning Lakeway properties with lake views in your range. <strong>Want me to swing by this week?</strong>"</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── PROSPECT 10 ─── -->
+    <div class="prospect-card">
+      <div class="card-header">
+        <div class="prospect-avatar av-cyan">NJ</div>
+        <div class="card-identity">
+          <div class="prospect-num">Prospect #10</div>
+          <div class="prospect-name">Nadia Johnson</div>
+          <span class="prospect-type-badge badge-cyan">🎓 Young Professional</span>
+          <div class="contact-row">
+            <div class="contact-chip">📧 nadia.johnson.atx@gmail.com</div>
+            <div class="contact-chip">📞 (512) 904-7183</div>
+            <div class="contact-chip">📍 Currently renting 78704</div>
+          </div>
+        </div>
+        <div class="card-header-right">
+          <div class="confidence-badge">
+            <div class="conf-num">86%</div>
+            <div class="conf-label">AI Confidence</div>
+          </div>
+          <div class="conf-bar"><div class="fill" style="width:86%"></div></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-section">
+          <div class="cs-label">Location & Target</div>
+          <div class="cs-value">Renting in <span class="highlight">78704 (Travis Heights)</span><br>Targeting <strong>East Austin / Cherrywood</strong></div>
+        </div>
+        <div class="card-section">
+          <div class="cs-label">Budget</div>
+          <div class="cs-value"><span class="budget">$340K–$420K</span><br>Conventional · 10% down · Strong credit 780+</div>
+        </div>
+        <div class="card-section">
+          <div class="cs-label">Pain Point</div>
+          <div class="cs-value">Healthcare data analyst, 29 y/o, tired of renting but unsure she qualifies alone. Has $40K saved but thinks she needs more. Down payment assistance programs unknown to her.</div>
+        </div>
+      </div>
+      <div class="card-outreach">
+        <div class="outreach-icon">💬</div>
+        <div class="outreach-content">
+          <div class="outreach-label">Sarah's Personalized Outreach Angle</div>
+          <div class="outreach-text">"Nadia — you're more ready than you think. With a 780 credit score and $40K saved, you qualify for 3 down payment assistance programs that could get you into East Austin for less than your current rent. <strong>I put together a quick 2-page 'Am I Ready?' guide — want me to send it over?</strong>"</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /prospect-grid -->
+
+</div><!-- /page -->
+
+<!-- FOOTER -->
+<div class="pack-footer">
+  <div class="footer-brand">
+    <div class="fb-name">AGNC AI</div>
+    <div class="fb-tagline">Prospect Intelligence Platform · agnc.ai</div>
+  </div>
+  <div class="footer-copy">
+    Prepared exclusively for Sarah Mitchell · RE/MAX Austin, TX<br>
+    All prospect data is AI-curated and intended for outreach purposes only.<br>
+    © 2026 AGNC AI · All rights reserved.
+  </div>
+  <div class="footer-powered">
+    <div class="powered-badge">
+      <div class="dot"></div>
+      Powered by AGNC AI
+    </div>
+    <div>47 signals analyzed · 10 prospects curated</div>
+  </div>
+</div>
+
+<!-- WATERMARK -->
+<div class="watermark">
+  <div class="dot"></div>
+  Powered by AGNC AI
+</div>
+
+</body>
+</html>
